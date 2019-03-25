@@ -2,7 +2,7 @@
 Building a weather app with vanilla JS, using the Darksky API and icons.
 
 ## Visit the working version
-A working version can be found at callumhayden.com/weather/
+A working version can be found <a href="callumhayden.com/weather/">here</a>
 
 ## Things to improve
 - Include a weekly view of the weather. This can be done with the Darksky API.
