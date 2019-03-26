@@ -21,8 +21,8 @@ window.addEventListener('load', () => {
                     return response.json();
                 })
                 .then(data => {
-                    const { temperature, summary, icon } = data.currently;
-
+                    const { temperature, icon } = data.currently;
+                    const { summary } = data.daily;
                     //Set DOM elements from the API
                     temperatureDegree.textContent = temperature;
                     temperatureDescription.textContent = summary;
@@ -31,15 +31,18 @@ window.addEventListener('load', () => {
                     let celsius = (temperature - 32) * (5 / 9);
                     //Set Icon
                     setIcons(icon, document.getElementById('icon'));
-
                     //Change temperature to Celsius / Faranheit
                     temperatureSection.addEventListener('click', () => {
                         if (temperatureSpan.textContent === "F") {
                             temperatureSpan.textContent = "C";
                             temperatureDegree.textContent = Math.floor(celsius);
+                            celsiusCalc = Math.floor((summary.search(/(\d+) ?°/) - 32) * (5 / 9));
+                            celsiusSummary = summary.replace(/(\d+) ?°[F]/, celsiusCalc + "°C");
+                            temperatureDescription.textContent = celsiusSummary;
                         } else {
                             temperatureSpan.textContent = "F";
                             temperatureDegree.textContent = temperature;
+                            temperatureDescription.textContent = summary;
                         }
                     })
                 });
