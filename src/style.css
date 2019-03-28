@@ -14,39 +14,7 @@
      font-family: sans-serif;
      color: white;
  }
- #menu-outer {
-	height: 84px;
-}
-
-.table {
-	display: table;   /* Allow the centering to work */
-	margin: 0 auto;
-}
-
-ul#horizontal-list {
-	min-width: 696px;
-	list-style: none;
-	padding-top: 20px;
-}
-
-ul#horizontal-list li {
-		display: inline;
-}
-button{
-    background-color: transparent;
-    border-color: white;
-    padding: 10px 5px;
-    border-width: 2px;
-    border-radius: 4px;
-    color: white;
-    cursor: pointer;
-    margin: 2px;
-}
-button:hover {
-    background-color: white;
-    color: rgb(47,150,163);
-}
-
+ 
  .location,
  .temperature {
     height: 30vh;
